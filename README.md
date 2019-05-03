@@ -82,8 +82,8 @@ You'll notice we're calling the `done` function on our request. This code execut
 
 1. Refresh the browser and watch it fail due to our improper url. You should see an alert pop up. 
 
----
 **Thanks for reading all that. Let's write some code**
+---
 
 ### So what can I do with some random dog URLs?
 
