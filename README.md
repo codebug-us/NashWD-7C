@@ -16,19 +16,19 @@ Back in the day when you were a kid and your parents were ordering pizza for din
 
 The local pizza place would *respond* by sending a delivery person to your door with the pizza you requested. 
 
-This is exactly how API's work. A company's API is like a restaurant's menu in this scenario. The pizza place creates a set of rules for what you can order from the restaurant. They make certain items available, and certain items are not. AKA if you were trying to order 5lbs of salt, even if the pizza place has it, they likely won't deliver that to you. 
+This is exactly how API's work. A company's API is like a restaurant's menu in this scenario. The pizza place creates a set of rules for what you can order from the restaurant. They make certain items available, and certain items not. AKA if you were trying to order 5lbs of salt, even if the pizza place has it, they likely won't deliver that to you. 
 
 Software companies work the same way. Twitter has a vast amount of data, ranging from people's emails and phone numbers to their public/private tweets. Twitter gets to decide what it shares with different applications, and builds APIs (like restaurant menus) to give developers like you and me the ability to access some of their data so we can build apps that allow you to login through Twitter or show tweets in your app. 
 
 
 ### So how exactly do APIs work when we're talking about code and not pizza? 
 
-You, as a developer, decide you want to show some tweets in your app. You go to the Twitter Developer's Portal and they give you what is called an API Key, which is just a really long string of characters. You send this API Key to Twitter any time you send a *request* for data, so Twitter knows it is you asking for the data. You tell Twitter in your *request* exactly what data you want, and if you're allowed to access that data, Twitter *responds* back to you so you can present it in your website!
+You, as a developer, decide you want to show some tweets in your app. You go to the Twitter Developer's Portal and they give you what is called an API Key, which is just a really long string of characters. You send this API Key to Twitter any time you send a *request* for data, so Twitter knows it is you asking for the data. You tell Twitter in your *request* exactly what data you want, and if you're allowed to access that data, Twitter *responds* back to you with your requested data so you can present it in your website!
 
 
 ### Okay cool. Show me how to do that.
 
-In JavaScript there are a few different ways we can use to send requests to get data from different services – what we're going to use is called AJAX. You can find more information [here](http://api.jquery.com/jquery.ajax/), though I'm going to walk you through it. 
+In JavaScript there are a few different ways to send requests to get data from different services – we're going to use one way called AJAX. You can find more information [here](http://api.jquery.com/jquery.ajax/), though I'm going to walk you through it. 
 
 1. All of our AJAX will be written in our JavaScript file, so let's open up the script.js and inside our `$(document).ready` function let's run `console.log("Page loaded");` to make sure everything is working correctly.
 
@@ -66,9 +66,9 @@ POST
 
 You'll notice we're calling the `done` function on our request. This code executes when we receive the response from the server. In the same way that it takes awhile after you call for your pizza to arrive, it takes some time after you request data for that data to arrive. Inside of our `done` function, let's `console.log` the response we received from www.dog.ceo. 
 
-1. Click the arrow of the response that was printed in the console, and you'll see the response has two attributes: (1) message and (2) status. 
+1. When your find your response printed in the console, click the arrow to expand the response - you'll see it has two attributes: (1) message and (2) status. 
 
-1. The status just tells us whether the request was successful, and the response is the URL to the V important dog image. Copy/paste that URL into a new Chrome tab to see our dog image. 
+1. The status tells us whether the request was successful, and the message is the URL to the V important dog image. Copy/paste that URL into a new Chrome tab to see our dog image. 
 
 1. Now, that all worked perfectly, but I know enough about code to realize that things break...often. What happens if the request fails? Good question! AJAX provides a handy way for us to handle failed requests. Just like we have the `done` function that runs when the request finishes, we can create a `fail` function to handle any failures.
 
@@ -80,7 +80,7 @@ You'll notice we're calling the `done` function on our request. This code execut
 
 1. Add in the `request.fail` code below our `done` code and then change the URL in the GET request so that it's pointing to `"https://dog.ceo/api/breeds/image/rando"` *Instead of requesting a "random" dog, we are now requesting a "rando" dog. We have gone "off menu"*
 
-1. Refresh the browser and watch it fail. You should see an alert. 
+1. Refresh the browser and watch it fail due to our improper url. You should see an alert pop up. 
 
 ---
 **Thanks for reading all that. Let's write some code**
